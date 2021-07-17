@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            body{
+                  padding: 20px 100px;
+            }
+            h3{
+                  text-align: center;
+                  background-color: rgb(72, 131, 190);
+                  text-transform: capitalize;
+                  margin: 0px;
+                
+                  padding: 15px;
+                    font-size: 30px;
+               font-weight: bold;
+               text-shadow: darkred;
+                  color: white;
+
+            }
+
+            textarea{
+                  width: 99.3%;
+                  border-color:  rgb(72, 131, 190);
+                  position: relative;
+                  
+                 
+            }
+            
+         p{
+               text-align: center;
+               background-color:rgb(72, 131, 190) ;
+               font-size: 20px;
+               font-weight: bold;
+               padding: 10px;
+               margin: 0px;
+               text-transform: capitalize;
+               color: white;
+         }
+         .w{
+               color: rgb(19, 15, 15);
+         }
+         
+         .and{
+               color: rgb(255, 60, 0);
+         }
+          
+      </style>
+</head>
+<body>
+      <h3>Word Counter <span class="and">and </span>character counter</h3>
+     
+         <textarea id="textbox" cols="30" rows="10"></textarea>
+
+
+  <p> 
+        <span id="word" class="w">0</span>  words count
+         <span id="char" class="w">0</span> characters count
+      </p>
+    
+      <script>
+
+
+
+
+let textbox = document.getElementById("textbox")
+
+textbox.addEventListener("input", function(){
+      var text = this.value;
+      var chars = text.length;
+      document.getElementById("char").innerHTML = chars;
+
+     text = text.trim();
+ var words = text.split(" ");
+ let cleanList = words.filter(function(elm){
+      return elm != " ";
+ })
+      document.getElementById("word").innerHTML = words.length;
+
+})
+
+
+      </script>
+</body>
+</html>

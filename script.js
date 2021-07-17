@@ -1,0 +1,2 @@
+alert("HELLO");
+alert("world")

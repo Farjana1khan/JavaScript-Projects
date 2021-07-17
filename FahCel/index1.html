@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+      <style>
+
+body{
+      padding: 50px 150px;
+}
+h1{
+      text-align: center;
+}
+
+#container{
+      background-color: aqua;
+      padding: 50px;
+      text-align: center;
+      border: 2px solid black;
+}
+
+.div-input{
+      display: inline-block;
+      
+      font-weight: bold;
+         font-size: 20px;
+         color: blue;
+         text-transform: capitalize;
+      
+      
+}
+.inp{
+      margin:  10px;
+      padding: 5px 0px;
+      font-size: 20px;
+    color: rgb(236, 3, 3);
+      text-align: center;
+     
+}
+      </style>
+
+</head>
+<body>
+
+      <h1>Temrature convertor</h1>
+
+      <div id="container">
+           <div class="div-input">
+                  <label class="lbl">celcius</label>
+                  <br>
+            <input type="number" class="inp" id="cel" value="0" />
+           </div>
+
+           <div class="div-input">
+                  <label class="lbl">Fehrenheiht</label>
+                  <br>
+            <input type="number" class="inp" id="fah" value="32"/>
+
+           </div>
+
+
+      </div>
+      
+      <script>
+var cel = document.getElementById("cel")
+
+cel.addEventListener("input", function(){
+      // console.log("change");
+  let c = this.value;
+
+  let f = (c * 9/5) + 32;
+  if(!Number.isInteger(f)){
+        f.toFixed(4)
+  }
+  fah.value = f;
+
+})
+
+
+var fah = document.getElementById("fah")
+
+fah.addEventListener("input", function(){
+      // console.log("changes...");
+      let f = this.value;
+
+  let c = (f - 32) * 5/9;
+  if(!Number.isInteger(c)){
+      c=  c.toFixed(4)
+  }
+  cel.value = c;
+})
+      </script>
+</body>
+</html>
+
