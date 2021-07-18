@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+      <style>
+
+body{
+       scroll-behavior: smooth;
+      margin: 0px;
+}
+
+#header{
+      text-align: center;
+      margin: 0px;
+   
+      background-color: darksalmon;
+      
+  height: 100px;
+
+  position: relative;
+ 
+}
+
+
+
+#logo{
+      border-radius: 50%;
+      
+      width: 100px;
+      padding: 40px;
+      
+}
+
+
+
+nav{
+      background-color: rgb(43, 226, 202); 
+      
+}
+
+#menu-bar{
+     
+      margin: 0px;
+      text-align: left;
+      
+}
+
+ li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: burlywood;
+  border-radius: 50%;
+  
+
+ 
+}
+
+li{
+      display: inline-block;
+      
+      padding: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    
+    
+      
+} 
+
+
+h1{
+     text-shadow: 5px 2px rgb(0, 174, 255);
+  
+     color: #2f00ff;
+      font-weight: 100rem;
+      font-size: 40px;
+      text-decoration: solid;
+      text-transform: uppercase;
+       text-decoration-line: underline;
+  text-decoration-style: wavy;
+ 
+
+ 
+  
+
+  position: relative;
+  animation: mymove 5s infinite;
+     
+}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 100px;}
+}
+
+
+
+
+#container{
+      text-align: center;
+      padding: 50px 100px;
+}
+
+#about-img{
+      width: 100%;
+   
+}
+
+.sticky{
+      
+      width: 100%;
+     
+      position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+
+   </style>
+
+</head>
+
+<body>
+      <div id="header" class="wrapper">
+             <img id="logo"
+      src="data:image/png;base64,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"
+      alt="logo "
+    />
+
+      </div>
+      
+    <nav id="menu-bar" >
+          <ul>
+                  <li><a class="active" href="#home">Home</a></li>
+                  <li><a class="active" href="#about">About</a></li>
+                  <li><a href="#Contact">Contact</a></li>
+                  <li><a href="#Services">Services</a></li>
+                  <li><a href="#Portfolio">Portfolio</a></li>
+
+          </ul>
+      </nav>
+
+     <div id="container">
+            <h1 >About us</h1>
+      <img id="about-img"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhwraL1lDK7pBifJRw9FWrSuNNdGI0WSqug&usqp=CAU"
+      alt="about us"
+    />
+
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam voluptate
+      impedit natus vel ipsum suscipit nulla repellendus, architecto a quasi
+      sit? Quas id maxime quo cumque animi dicta tempore qui sunt saepe pariatur
+      nobis est deleniti officiis temporibus aspernatur impedit magni nostrum
+      perspiciatis, cum blanditiis totam sed tenetur quisquam. Dolores
+      blanditiis suscipit adipisci laborum harum odit soluta libero autem vitae
+      voluptates. Vel voluptatem distinctio harum quam ab, pariatur itaque optio
+      obcaecati! Excepturi, quas minus! Similique illo aperiam dolorum expedita
+      natus distinctio sapiente atque. Molestiae est unde cum voluptate
+      laboriosam! Ea voluptates quis asperiores rerum sint nobis mollitia quasi
+      corporis excepturi cum consequuntur aspernatur molestias illum a
+      consequatur laboriosam alias, ratione culpa quidem error harum enim
+      minima, distinctio temporibus. Neque non delectus ex itaque omnis
+      obcaecati cupiditate praesentium quam unde impedit facere, suscipit quia
+      officiis vitae hic. Neque culpa dolor odit soluta! Iusto repellendus
+      similique deleniti impedit accusantium, quaerat sequi veniam laborum
+      reiciendis culpa dolore placeat et aperiam, pariatur minus error saepe at
+      possimus quis fugit! Est voluptas, quod deserunt exercitationem nobis
+      repudiandae adipisci placeat rem. In, perspiciatis labore itaque sapiente
+      mollitia enim. Possimus ratione, accusamus, voluptatem similique molestiae
+      cum placeat corporis suscipit magnam distinctio odit aspernatur excepturi
+      dolorem numquam beatae eveniet cupiditate temporibus atque deserunt dolor
+      voluptatibus ex harum laborum! Beatae in fuga tenetur, iure accusamus
+      fugit, quam minima accusantium, nobis incidunt omnis eius nesciunt vero
+      cum quisquam repellat eos consectetur tempora sapiente assumenda
+      temporibus? Minima quam quis laudantium culpa rem incidunt. Repudiandae
+      molestias nihil voluptatibus, libero totam sequi reiciendis porro aliquam.
+      Necessitatibus quaerat similique odio sint alias quam harum aperiam,
+      magnam dignissimos odit quos incidunt nisi blanditiis nam porro at, aut
+      veritatis. Dicta similique quis nemo nostrum quisquam, vel vero, labore
+      quas sed eos officia tempora ullam est debitis quidem saepe accusamus enim
+      laboriosam pariatur maiores cupiditate eligendi sunt? Exercitationem
+      laboriosam reprehenderit quasi dolore, veniam, voluptatum accusamus vel
+      repudiandae molestiae numquam sint inventore voluptatibus labore aliquam
+      sapiente, tenetur distinctio voluptatem culpa. Magni quos nisi et nobis,
+      ea at vero, reprehenderit esse perferendis explicabo exercitationem
+      suscipit porro doloremque minus eaque deleniti, nihil laudantium assumenda
+      quisquam eveniet ipsum dignissimos dolorum magnam autem. Cumque omnis ab
+      repudiandae voluptatibus exercitationem tempora numquam ex expedita atque
+      illum! Non accusamus facere facilis aspernatur, velit tempore eaque
+      officiis veritatis. Quasi deleniti recusandae assumenda adipisci, sit ex
+      labore magnam nobis corrupti? Nostrum, nulla hic libero doloremque
+      possimus voluptatum omnis voluptatem, sunt qui earum odit assumenda harum
+      nam blanditiis, et sapiente sequi! Cumque voluptas expedita aut
+      asperiores. Explicabo non praesentium excepturi aliquid dolor, possimus
+      nostrum? Omnis non sed labore atque quidem eum numquam voluptate. Possimus
+      ea cumque dolor, consequatur corrupti quo omnis placeat explicabo debitis
+      recusandae libero atque eaque, tempora maxime nam ab nostrum
+      reprehenderit. Fugit unde temporibus maxime porro nobis, aliquam impedit
+      perferendis modi adipisci numquam aspernatur magnam ipsam asperiores et
+      perspiciatis voluptatum iusto, voluptatibus tempora! Quibusdam quidem
+      eveniet, eligendi debitis iusto numquam molestias, neque fugit nam rem
+      veniam corporis officiis omnis esse ex dolorem modi consectetur totam!
+      Magnam ex accusamus quasi cumque quod, quas explicabo doloribus.
+    </p>
+
+     </div>
+
+
+     <script>
+
+           window.addEventListener("scroll", function(){
+
+            let navbar = document.getElementById("menu-bar")
+            if(window.pageYOffset >= 190){
+                  navbar.classList.add("sticky")
+            }
+            else{
+                   navbar.classList.remove("sticky") 
+            }
+
+           })
+     </script>
+</body>
+</html>
