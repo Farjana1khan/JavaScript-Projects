@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: cornflowerblue;
+        height: 100vh;
+      }
+
+      #form-container {
+        background-color: white;
+        padding: 70px;
+        margin: 50px;
+        text-align: center;
+      }
+
+      input {
+        width: 200px;
+        margin: 10px 0px;
+        padding: 5px;
+      }
+
+      #btn {
+        width: 214px;
+        padding: 8px;
+        color: white;
+        background-color: blue;
+        border: none;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 0px 0px 10px 0px;
+      }
+
+      .error{
+            color: red;
+            margin: 0px;
+            text-align: left;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Form Validation</h1> -->
+    <div id="form-container">
+      <h1>Login</h1>
+      <form action="" onsubmit=" return validForm()">
+        <input type="text" id="username" placeholder="username" /><br />
+        <p id="userError" class="error"></p>
+        <input type="password" id="password" placeholder="password" /><br />
+          <p id="passError" class="error"></p>
+        <input type="Submit" id="btn" />
+      </form>
+    </div>
+
+    <script>
+
+      let username = document.getElementById("username");
+      let password = document.getElementById("password");
+      let flag = 1;
+      function validForm() {
+        if ((username.value == "")) {
+         document.getElementById("userError").innerHTML = "username is empty"
+      flag = 0;  
+      } 
+        
+        
+        else if(username.value.length < 3){
+                document.getElementById("userError").innerHTML = "username length should be 3 digit"
+         flag = 0;
+            }
+       
+        else{
+                 document.getElementById("userError").innerHTML = ""
+                   flag = 1;
+        }
+
+      
      
-      <style>
-            body{
-                  padding: 20px 100px;
+
+       if ((password.value == "")) {
+             document.getElementById("passError").innerHTML = "password is empty"
+             flag = 0;
+        } 
+        
+        else if(password.value.length <= 6){
+                 document.getElementById("passError").innerHTML = "password length should be greater or equal to 6 dogit "
+         flag = 0;
             }
-            h3{
-                  text-align: center;
-                  background-color: rgb(72, 131, 190);
-                  text-transform: capitalize;
-                  margin: 0px;
-                
-                  padding: 15px;
-                    font-size: 30px;
-               font-weight: bold;
-                  color: white;
+      
+        else{
+                 document.getElementById("passError").innerHTML = ""
+                 flag = 1;
+        }
+        
 
-            }
+       if(flag){
+             return true
+       }
 
-            textarea{
-                  width: 99.3%;
-                  border-color:  rgb(72, 131, 190);
-                  position: relative;
-                 
-            }
-            
-         p{
-               text-align: center;
-               background-color:rgb(72, 131, 190) ;
-               font-size: 20px;
-               font-weight: bold;
-               padding: 10px;
-               margin: 0px;
-               text-transform: capitalize;
-               color: white;
-         }
-         .w{
-               color: rgb(19, 15, 15);
-         }
-         
-         .and{
-               color: rgb(255, 60, 0);
-         }
-          
-      </style>
-</head>
-<body>
-      <h3>Word Counter <span class="and">and </span>character counter</h3>
-     
-         <textarea id="textbox" cols="30" rows="10"></textarea>
+       return false
+      
 
+      
+      }
 
-  <p> 
-        <span id="word" class="w">0</span>  words count
-         <span id="char" class="w">0</span> characters count
-      </p>
-    
-      <script>
-
-
-
-
-let textbox = document.getElementById("textbox")
-
-textbox.addEventListener("input", function(){
-      var text = this.value;
-      var chars = text.length;
-      document.getElementById("char").innerHTML = chars;
-
-     text = text.trim();
- var words = text.split(" ");
- let cleanList = words.filter(function(elm){
-      return elm != " ";
- })
-      document.getElementById("word").innerHTML = words.length;
-
-})
-
-
-      </script>
-</body>
+    </script>
+  </body>
 </html>
